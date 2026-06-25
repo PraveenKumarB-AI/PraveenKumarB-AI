@@ -116,7 +116,7 @@ If you're working on anything involving RAG, agentic systems, or applying GenAI 
 regulated industries, I'd genuinely enjoy comparing notes.
 
 📧 Praveen.b@mycvhire.com
-💼 linkedin.com/in/praveenkumarbotta
+💼 [linkedin.com/in/praveenkumarbotta](https://www.linkedin.com/in/praveenkumarbotta/)
 📍 Georgia, USA
 
 *Open to GenAI, ML Engineering, and AI platform roles.*
