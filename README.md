@@ -1,16 +1,16 @@
 # Hey, I'm Praveen 👋
 
 I'm a Gen AI/ML Engineer based in Georgia, with about four years now of building machine
-learning and generative AI systems for banking and fintech — environments where "it works
+learning and generative AI systems for banking and fintech environments where "it works
 on my laptop" isn't good enough, because the moment compliance, audit trails, and risk
 controls get involved, everything has to be production-grade from day one.
 
 Right now I'm at Citibank, where I work on the Gen AI platform supporting our Chief
-Investment Office — basically helping 300+ analysts, portfolio managers, and compliance
+Investment Office ,basically helping 300+ analysts, portfolio managers, and compliance
 folks get through regulatory analysis and investment research faster without cutting
 corners on accuracy. Before that, I spent a couple of years at LTI Mindtree, where I got
 my hands dirty across fraud detection, churn prediction, and forecasting for fintech
-clients — which is honestly where I learned that a model's accuracy on a holdout set means
+clients ,which is honestly where I learned that a model's accuracy on a holdout set means
 nothing if nobody can explain why it made a decision.
 
 These days most of my time goes into the things that make GenAI systems actually trustworthy:
@@ -23,15 +23,15 @@ drifting into garbage in production.
 ## What I actually do day to day
 
 **Building RAG systems that don't hallucinate confidently wrong answers.**
-I've spent a lot of time on the retrieval side — chunking strategy, embedding choice,
-reranking — because in finance, a wrong answer delivered confidently is worse than no
+I've spent a lot of time on the retrieval side ,chunking strategy, embedding choice,
+reranking because in finance, a wrong answer delivered confidently is worse than no
 answer. My current RAG pipeline (FAISS + Redis) improved retrieval relevance by 35% over
 our earlier version, mostly by getting more disciplined about reranking instead of just
 throwing more documents at the LLM.
 
 **Designing multi-agent workflows.**
 I built a multi-agent system using LangGraph and MCP where separate agents handle research,
-compliance verification, and reporting — with tool use and self-reflection loops so agents
+compliance verification, and reporting with tool use and self-reflection loops so agents
 can catch their own mistakes before they reach a human. That cut manual regulatory review
 effort by about half on the workflows it touches.
 
