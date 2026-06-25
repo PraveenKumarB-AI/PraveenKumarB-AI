@@ -80,21 +80,40 @@ cross-validation
 
 ## A couple of projects I'm proud of
 
-### 📑 Financial Document Intelligence System
+### 📑 Financial Document Intelligence System — ✅ Live
 A RAG platform I built to make SEC filings and financial reports actually queryable in
 plain English instead of forcing someone to dig through a 200-page 10-K manually. It
-handles the full pipeline — document ingestion, chunking, embedding generation, vector
-search, and generation — and returns answers grounded in the actual source documents
-rather than the model just making things up. Built with Python, LangChain, and vector
-databases.
+handles the full pipeline — SEC EDGAR ingestion, PDF parsing with PyMuPDF, semantic
+chunking, embedding generation (sentence-transformers), and pgvector storage — and
+returns answers grounded in the actual source documents rather than the model just
+making things up. Currently running fully on open-source infra: Ollama (Llama 3) for
+generation, no paid APIs anywhere in the stack. Apple, Microsoft, and Tesla filings are
+loaded (11,800+ chunks) and it's live on Streamlit Community Cloud.
+
+- 🔗 [GitHub](https://github.com/PraveenKumarB-AI/financial-doc-intelligence)
+- 🚀 [Live demo](https://financial-doc-intelligence-gbnxwwhxj7d3fyqw4if6pn.streamlit.app/)
+- **Stack:** Python, LangChain, pgvector, FastAPI, Streamlit, Ollama (Llama 3), PyMuPDF, sec-edgar-downloader
 
 ### 📈 Real-Time Stock Sentiment & Trading Signal Engine
 A pipeline that ingests live financial news and Reddit chatter through Kafka and PySpark,
 processing 10,000+ signals a day. I fine-tuned FinBERT to classify sentiment on earnings
 calls and analyst reports (93% F1 on held-out data), then combined that with an LSTM +
-XGBoost ensemble to predict short-term price movement — it beat the baseline by 22%.
-Deployed as a FastAPI service on AWS Lambda, serving predictions in under 100ms with
-MLflow tracking drift in the background.
+XGBoost ensemble — using sentiment scores alongside technical indicators like RSI and
+MACD — to predict short-term price movement, beating the baseline by 22%. Deployed as a
+FastAPI service with auto-scaling on AWS Lambda, serving predictions in under 100ms with
+MLflow tracking experiments and flagging drift in the background.
+
+- **Stack:** Apache Kafka, PySpark, FinBERT (Hugging Face), LSTM, XGBoost, FastAPI, AWS Lambda, MLflow
+
+### 🤖 GenAI Platform for Chief Investment Office Workflows (Citibank)
+Architected end-to-end at Citibank to support 300+ analysts, portfolio managers, and
+compliance professionals. Combines a LangGraph + MCP multi-agent system (research,
+compliance verification, reporting agents with self-reflection loops) with a secure
+ingestion pipeline for SEC filings, FINRA guidance, and earnings reports, plus
+QLoRA-fine-tuned financial LLMs (FinGPT, Palmyra) for summarization and classification.
+Cut manual regulatory effort by 50% and improved RAG retrieval relevance by 35%.
+
+- **Stack:** LangGraph, MCP, FAISS, Redis, QLoRA/PEFT, AWS SageMaker, Azure AI, MLflow, Airflow
 
 ---
 
